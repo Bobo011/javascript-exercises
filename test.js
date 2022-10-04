@@ -1,59 +1,21 @@
-// The goal for this exercise is to create a calculator that does the following:
+// > A series of numbers in which each number ( Fibonacci number ) is the sum of the 
+// two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc.
 
-// add, subtract, get the sum, multiply, get the power, and find the factorial
+// ```javascript
+// fibonacci(4) // returns the 4th member of the series: 3  (1, 1, 2, 3)
+// fibonacci(6) // returns 8
 
-// add,
-// subtract,
-// sum,
-// multiply,
-// power,
-// factorial
 
-function add(x,y){
-let addition = x+y;
-
-return addition;
-
-}
-
-function subtract(x,y){
-    let subtraction = x-y;
-    
-    return subtraction;
-    
+const fibonacci = function(n) {
+    let a = 0, b = 1, c = n;
+  
+    for(let i = 2; i <= n; i++) {
+      c = a + b;
+      a = b;
+      b = c;
     }
-
-function sum(x,y){
-let summation = x + y;
-
-return summation;
-
-}
-
-function multiply(x,y){
-let multiplication = x * y;
-
-return multiplication;
-
-}
-
-function power(x,y){
-    let powerOf = x ** y;
     
-    return powerOf;
-    
-    }
+    return c;
+};
 
-    
-
-    function factorial(num){
-        if (num === 0 || num === 1)
-        return 1;
-      for (var i = num - 1; i >= 1; i--) {
-        num *= i;
-      }
-      return num;
-
-    }
-
-    
+console.log(fibonacci(5));

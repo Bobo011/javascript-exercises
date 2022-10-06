@@ -1,21 +1,44 @@
-// > A series of numbers in which each number ( Fibonacci number ) is the sum of the 
-// two preceding numbers. The simplest is the series 1, 1, 2, 3, 5, 8, etc.
+// You are given an array of objects that represent books with an author and a 
+// title that looks like this:
 
 // ```javascript
-// fibonacci(4) // returns the 4th member of the series: 3  (1, 1, 2, 3)
-// fibonacci(6) // returns 8
+// const books = [
+//   {
+//     title: 'Book',
+//     author: 'Name'
+//   },
+//   {
+//     title: 'Book2',
+//     author: 'Name2'
+//   }
+// ]
+// ```
 
 
-const fibonacci = function(n) {
-    let a = 0, b = 1, c = n;
-  
-    for(let i = 2; i <= n; i++) {
-      c = a + b;
-      a = b;
-      b = c;
-    }
+
+const data = {
+    books:[
+    {title: 'Book', author: 'Name'}, 
+    { title: 'Book2', author: 'Name2' }
+    ],
+logBooks(){
     
-    return c;
+    this.books.forEach(book => {
+        console.log(book.title);
+    });
+}
+
 };
 
-console.log(fibonacci(5));
+data.logBooks();
+
+
+
+// const getTheTitles = (books) => books.map((book) => book.title);
+
+// console.log(getTheTitles(data));
+ 
+
+
+
+
